@@ -1,5 +1,12 @@
 <template>
   <q-page>
+    <q-toolbar inverted>
+      <q-breadcrumbs separator=">">
+        <q-breadcrumbs-el label="Home" icon="home"/>
+        <q-breadcrumbs-el label="Settings" icon="settings"/>
+      </q-breadcrumbs>
+    </q-toolbar>
+
     <div class="row" style="margin: 20px 10px 0px 10px;">
       <div class="col-12 col-md-6">
         <q-list no-border sparse>
@@ -53,13 +60,15 @@
 
 import { required, email } from 'vuelidate/lib/validators';
 
+import alert from 'mixins/alert.js';
 import common from 'mixins/common.js';
 import storage from 'mixins/storage.js';
+import rest from 'mixins/rest.js';
 
 export default {
   name: 'SettingsPage',
 
-  mixins: [common, storage],
+  mixins: [common, alert, storage, rest],
 
   data() {
     return {
@@ -80,6 +89,11 @@ export default {
     }
   },
 
+  mounted() {
+    this.ownerEmail = this.$ownerEmail;
+    this.userEmail = this.$userEmail;
+  },
+
   methods: {
     save() {
       this.$store.commit('updateOwnerEmail', this.ownerEmail);
@@ -88,7 +102,7 @@ export default {
       this.$store.commit('updateUserEmail', this.userEmail);
       this.$setItem(this.$data.$USER_EMAIL, this.userEmail);
 
-      this.$router.push('/');
+      this.$router.push('MainPage');
     }
   }
 }

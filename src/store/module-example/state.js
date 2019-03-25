@@ -3,5 +3,7 @@
 export default {
   ownerEmail: '',
   userEmail: '',
-  closeNotify: ''
+  closeNotify: '',
+  selectedTeamName: '',
+  selectedTeamOwner: ''
 }

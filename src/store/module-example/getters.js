@@ -11,3 +11,11 @@ export function getUserEmail(state) {
 export function getCloseNotify(state) {
   return state.closeNotify;
 }
+
+export function getSelectedTeamName(state) {
+  return state.selectedTeamName;
+}
+
+export function getSelectedTeamOwner(state) {
+  return state.selectedTeamOwner;
+}
