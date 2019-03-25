@@ -21,14 +21,18 @@ export default {
     $sync() {
       const ssOwnerEmail = this.$getItem(this.$data.$OWNER_EMAIL);
       const ssUserEmail = this.$getItem(this.$data.$USER_EMAIL);
+      const ssSelectedTeamName = this.$getItem(this.$data.$SELECTED_TEAM_NAME);
+      const ssSelectedTeamOwner = this.$getItem(this.$data.$SELECTED_TEAM_OWNER);
 
       if (ssOwnerEmail && !this.$ownerEmail) {
         this.$store.commit('updateOwnerEmail', ssOwnerEmail);
         this.$store.commit('updateUserEmail', ssUserEmail);
+        this.$store.commit('updateSelectedTeamName', ssSelectedTeamName);
+        this.$store.commit('updateSelectedTeamOwner', ssSelectedTeamOwner);
 
-        console.log('Storage and store are synced.');
+        //console.log('Storage and store are synced.');
       } else {
-        console.log('Storage and store are already synced.');
+        //console.log('Storage and store are already synced.');
       }
     },
   }

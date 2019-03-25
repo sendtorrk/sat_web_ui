@@ -10,6 +10,7 @@ module.exports = function (ctx) {
       'axios',
       'vuelidate',
       'vuemoment',
+      'satcomponents'
     ],
     css: [
       'app.styl'
@@ -35,13 +36,24 @@ module.exports = function (ctx) {
 
           // Add your own alias like this
           mixins: path.resolve(__dirname, './src/mixins'),
+          components: path.resolve(__dirname, './src/components'),
         }
       }
     },
     devServer: {
-      // https: true,
-      // port: 8080,
-      open: false // opens browser window automatically
+      https: true,
+      port: 8443,
+      open: false, // opens browser window automatically
+      proxy: {
+        '/ui': {
+          target: 'http://' + (process.env.SAT_SERVER_HOST || 'localhost') + ':' + (process.env.SAT_SERVER_PORT || '8081'),
+          changeOrigin: true,
+          pathRewrite: {
+            '^/ui': '/api'
+          },
+          secure: false
+        }
+      }
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {

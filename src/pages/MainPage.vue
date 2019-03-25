@@ -1,5 +1,5 @@
 <template>
-  <q-page>Entry Page</q-page>
+  <q-page></q-page>
 </template>
 
 <script>
@@ -11,20 +11,16 @@ import storage from 'mixins/storage.js';
 import rest from 'mixins/rest.js';
 
 export default {
-  name: 'EntryPage',
+  name: 'MainPage',
 
-  mixins: [common, storage, alert, rest],
+  mixins: [common, alert, storage, rest],
 
   data() {
     return {
-
     }
   },
 
   mounted() {
-    if (!this.$ownerEmail) {
-      this.$router.push('SettingsPage');
-    }
   },
 
   methods: {
