@@ -10,6 +10,9 @@ This is the UI project and powered by:
 
 * VueJS
 * Quasar
+* Axios
+* Vuelidate
+* Vuemoment
 
 ## Run UI
 
