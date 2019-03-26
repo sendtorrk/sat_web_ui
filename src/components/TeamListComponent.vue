@@ -7,14 +7,14 @@
         <q-item-main
           :label="team.name"
           :sublabel="team.ownerEmail"
-          @click.native="selectTeam(team.name, team.ownerEmail)"
+          @click.native="selectTeam(team.id, team.name, team.ownerEmail)"
         />
 
         <q-item-side
           right
           icon="done"
           color="primary"
-          v-if="team.ownerEmail === $selectedTeamOwner && team.name === $selectedTeamName"
+          v-if="team.id === $selectedTeamId"
         />
       </q-item>
     </q-list>
@@ -46,9 +46,11 @@ export default {
 
   watch: {
     $ownerEmail() {
+      this.$setItem(this.$data.$SELECTED_TEAM_ID, null);
       this.$setItem(this.$data.$SELECTED_TEAM_NAME, null);
       this.$setItem(this.$data.$SELECTED_TEAM_OWNER, null);
 
+      this.$store.commit('updateSelectedTeamId', null);
       this.$store.commit('updateSelectedTeamName', null);
       this.$store.commit('updateSelectedTeamOwner', null);
 
@@ -61,17 +63,23 @@ export default {
       try {
         this.teams = await this.$getResource('/v1/teams/' + this.$ownerEmail);
         //console.log(JSON.stringify(this.teams));
+
+        if(this.teams.length === 1) {
+          this.selectTeam(this.teams[0].id, this.teams[0].name, this.teams[0].ownerEmail);
+        }
       } catch (error) {
         this.$alertError(error);
       }
     },
 
-    selectTeam(selectedTeamName, selectedTeamOwner) {
-      //console.log(selectedTeamName + '/' + selectedTeamOwner);
+    selectTeam(selectedTeamId, selectedTeamName, selectedTeamOwner) {
+      //console.log(selectedTeamId + '/' + selectedTeamName + '/' + selectedTeamOwner);
 
+      this.$setItem(this.$data.$SELECTED_TEAM_ID, selectedTeamId);
       this.$setItem(this.$data.$SELECTED_TEAM_NAME, selectedTeamName);
       this.$setItem(this.$data.$SELECTED_TEAM_OWNER, selectedTeamOwner);
 
+      this.$store.commit('updateSelectedTeamId', selectedTeamId);
       this.$store.commit('updateSelectedTeamName', selectedTeamName);
       this.$store.commit('updateSelectedTeamOwner', selectedTeamOwner);
     }

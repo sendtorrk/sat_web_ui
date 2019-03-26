@@ -17,10 +17,18 @@ export function updateCloseNotify(state, closeNotify) {
   state.closeNotify = closeNotify;
 }
 
+export function updateSelectedTeamId(state, selectedTeamId) {
+  state.selectedTeamId = selectedTeamId;
+}
+
 export function updateSelectedTeamName(state, selectedTeamName) {
   state.selectedTeamName = selectedTeamName;
 }
 
 export function updateSelectedTeamOwner(state, selectedTeamOwner) {
   state.selectedTeamOwner = selectedTeamOwner;
+}
+
+export function updateSelectedAssetId(state, selectedAssetId) {
+  state.selectedAssetId = selectedAssetId;
 }

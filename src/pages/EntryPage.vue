@@ -24,6 +24,8 @@ export default {
   mounted() {
     if (!this.$ownerEmail) {
       this.$router.push('SettingsPage');
+    } else {
+      this.$router.push('MainPage');
     }
   },
 
