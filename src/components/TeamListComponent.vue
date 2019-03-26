@@ -1,11 +1,11 @@
 <template>
   <div>
-    <q-list no-border separator>
+    <q-list no-border separator dark>
       <q-list-header align="center">Teams</q-list-header>
 
       <q-item>
         <q-item-main>
-          <q-search v-model="filter" placeholder="Enter team name" hide-underline/>
+          <q-search v-model="filter" placeholder="Enter team name" hide-underline dark/>
         </q-item-main>
 
         <q-item-side right>

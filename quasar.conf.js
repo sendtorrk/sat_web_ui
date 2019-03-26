@@ -46,7 +46,7 @@ module.exports = function (ctx) {
       open: false, // opens browser window automatically
       proxy: {
         '/ui': {
-          target: 'http://' + (process.env.SAT_SERVER_HOST || 'localhost') + ':' + (process.env.SAT_SERVER_PORT || '8081'),
+          target: 'https://' + (process.env.SAT_SERVER_HOST || 'localhost') + ':' + (process.env.SAT_SERVER_PORT || '8444'),
           changeOrigin: true,
           pathRewrite: {
             '^/ui': '/api'

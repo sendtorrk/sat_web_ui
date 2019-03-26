@@ -31,7 +31,7 @@ uiApp.use(connectHistoryApiFallback());
 uiApp.use(serveStatic(__dirname + '/dist/spa-mat'));
 
 uiApp.use('/ui', httpProxyMiddleware({
-  target: 'https://' + (process.env.SAT_SERVER_HOST || 'localhost') + ':' + (process.env.SAT_SERVER_PORT || '8081'),
+  target: 'https://' + (process.env.SAT_SERVER_HOST || 'localhost') + ':' + (process.env.SAT_SERVER_PORT || '8444'),
   changeOrigin: true,
   secure: false,
   pathRewrite: {

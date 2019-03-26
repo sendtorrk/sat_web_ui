@@ -14,7 +14,7 @@
       </q-toolbar>
     </q-layout-header>
 
-    <q-layout-drawer v-model="leftDrawerOpen" content-class="bg-grey-2" v-if="$ownerEmail">
+    <q-layout-drawer v-model="leftDrawerOpen" content-class="bg-dark" v-if="$ownerEmail">
       <team-list/>
     </q-layout-drawer>
 
