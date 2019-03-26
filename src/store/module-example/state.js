@@ -4,6 +4,8 @@ export default {
   ownerEmail: '',
   userEmail: '',
   closeNotify: '',
+  selectedTeamId: '',
   selectedTeamName: '',
-  selectedTeamOwner: ''
+  selectedTeamOwner: '',
+  selectedAssetId: '',
 }

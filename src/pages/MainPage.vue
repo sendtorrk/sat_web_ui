@@ -1,5 +1,40 @@
 <template>
-  <q-page></q-page>
+  <q-page>
+    <q-toolbar inverted>
+      <q-breadcrumbs separator=">">
+        <q-breadcrumbs-el label="Home" icon="home"/>
+        <q-breadcrumbs-el label="Assets"/>
+      </q-breadcrumbs>
+    </q-toolbar>
+
+    <div class="row" style="margin: 20px 10px 0px 10px;">
+      <div class="col-12 col-md-12">
+        <q-toolbar color="faded">
+          <q-toolbar-title>Assets</q-toolbar-title>
+        </q-toolbar>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 20px 10px 0px 10px;">
+      <div class="col-12 col-md-12">
+        <assets/>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 20px 10px 0px 10px;">
+      <div class="col-12 col-md-12">
+        <q-toolbar color="faded">
+          <q-toolbar-title>Asset Notes</q-toolbar-title>
+        </q-toolbar>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 20px 10px 0px 10px;">
+      <div class="col-12 col-md-12">
+        <asset-notes/>
+      </div>
+    </div>
+  </q-page>
 </template>
 
 <script>
