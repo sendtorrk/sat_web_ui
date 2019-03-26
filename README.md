@@ -17,11 +17,23 @@ This is the UI project and powered by:
 
 https://quasar-framework.org/guide/#Development-with-Quasar-CLI-The-best-developer-experience
 
+### Development Mode
+
 From the top-level directory:
 
 ```
 npm install
 sudo quasar dev
+```
+
+### Production Mode
+
+From the top-level directory:
+
+```
+npm install
+sudo quasar build
+node app
 ```
 
 ## Access UI
