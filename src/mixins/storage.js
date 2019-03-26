@@ -7,15 +7,15 @@
 export default {
   methods: {
     $getItem(key) {
-      return this.$q.sessionStorage.has(key) ? this.$q.sessionStorage.get.item(key) : null;
+      return this.$q.localStorage.has(key) ? this.$q.localStorage.get.item(key) : null;
     },
 
     $setItem(key, value) {
-      this.$q.sessionStorage.set(key, value);
+      this.$q.localStorage.set(key, value);
     },
 
     $removeItem(key) {
-      this.$q.sessionStorage.remove(key);
+      this.$q.localStorage.remove(key);
     },
 
     $sync() {

@@ -28,7 +28,8 @@ export default {
           type: 'text' // optional
         },
         cancel: true,
-        color: 'secondary'
+        color: 'secondary',
+        preventClose: true,
       }).then(data => {
         return responseCb(data);
       }).catch(() => {
