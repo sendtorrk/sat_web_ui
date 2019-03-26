@@ -23,7 +23,9 @@ export default {
       }
 
       const response = await this.$axios.request(config)
-      return response.data;
+      //console.log(JSON.stringify(response));
+
+      return response;
     },
 
     async $postResource(path, data) {
@@ -33,7 +35,8 @@ export default {
         data: data
       };
 
-      return await this.$_resource(options);
+      const response = await this.$_resource(options);
+      return response.status;
     },
 
     async $putResource(path, data) {
@@ -43,7 +46,8 @@ export default {
         data: data
       };
 
-      return await this.$_resource(options);
+      const response = await this.$_resource(options);
+      return response.status;
     },
 
     async $getResource(path) {
@@ -52,7 +56,8 @@ export default {
         path: path
       }
 
-      return await this.$_resource(options);
+      const response = await this.$_resource(options);
+      return response.data;
     },
 
     async $deleteResource(path) {
@@ -61,7 +66,8 @@ export default {
         path: path
       }
 
-      return await this.$_resource(options);
+      const response = await this.$_resource(options);
+      return response.status;
     },
 
     async $deleteWithDataResource(path, data) {
@@ -71,7 +77,8 @@ export default {
         data: data
       }
 
-      return await this.$_resource(options);
+      const response = await this.$_resource(options);
+      return response.status;
     }
   }
 }
