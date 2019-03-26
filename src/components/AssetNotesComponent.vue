@@ -16,7 +16,6 @@
       :filter="filter"
       :pagination.sync="pagination"
       binary-state-sort
-      dense
     >
       <template slot="top-left" slot-scope="props">
         <q-search color="primary" v-model="filter"/>
