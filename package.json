@@ -1,7 +1,7 @@
 {
   "name": "sat_web_ui",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "Simple Asset Tracker - WEB UI",
   "productName": "Quasar App",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Raja Kannan",
