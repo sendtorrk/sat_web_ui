@@ -1,10 +1,9 @@
 # Simple Asset Tracker - Web UI
 
-A simple application to keep track of your lab assets. It consist of three different projects:
+A simple application to keep track of your lab assets. It consist of two different projects:
 
 * Server
 * UI
-* Mobile App
 
 This is the UI project and powered by:
 
@@ -45,4 +44,4 @@ node app
 https://localhost:8443
 ```
 
-See Wiki for screen shots
+See [Wiki](https://github.com/sendtorrk/sat_web_ui/wiki) for screen shots
